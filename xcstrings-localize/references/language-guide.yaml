@@ -1,0 +1,170 @@
+# 言語別翻訳ガイダンス
+#
+# 各言語の CLDR 複数形カテゴリ、フォーマリティ、テキスト長傾向、
+# および特記事項を定義する。
+#
+# SKILL.md のステップ 2-3 で参照される。
+# 未掲載の言語が対象になった場合は、CLDR のルールを調べて適用すること。
+# https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+
+languages:
+  en:
+    name: English
+    plural_categories: [one, other]
+    # one: 数値が1のとき (e.g., "1 item")
+    # other: それ以外 (e.g., "0 items", "2 items")
+    formality: neutral
+    text_length: 日本語より 10-15% 長くなる傾向
+    notes:
+      - ボタンラベルは動詞の原形を使用 (e.g., "Export", "Save")
+      - 文頭の大文字化 (Sentence case) を基本とする
+
+  zh-Hans:
+    name: 中文（简体）
+    plural_categories: [other]
+    # 複数形の区別なし
+    formality: neutral
+    text_length: 日本語と同程度かやや短い
+    notes:
+      - カタカナ外来語は意訳が基本 (e.g., エクスポート → 导出)
+      - 固有の音訳が定着している語はそちらを使用
+      - 句読点は全角を使用（，。）
+
+  zh-Hant:
+    name: 中文（繁體）
+    plural_categories: [other]
+    formality: neutral
+    text_length: 日本語と同程度かやや短い
+    notes:
+      - 簡体字との用語差に注意 (e.g., 信息→資訊, 软件→軟體)
+      - 台湾向けと香港向けで表現が異なる場合がある
+      - 句読点は全角を使用（，。）
+
+  ko:
+    name: 한국어
+    plural_categories: [other]
+    # 複数形の区別なし
+    formality: 합쇼체（格式体）を基本とする
+    text_length: 英語より 10-15% 短い傾向
+    notes:
+      - 助詞の使い分けに注意（은/는, 이/가, 을/를 等）
+      - 前の文字のパッチムの有無で助詞が変わる
+      - UI ラベルは해요체（丁寧体）でも可
+
+  fr:
+    name: Français
+    plural_categories: [one, other]
+    # one: 0 または 1 (e.g., "0 élément", "1 élément")
+    # other: それ以外 (e.g., "2 éléments")
+    formality: vouvoiement（vous）を基本とする
+    text_length: 日本語・英語より 15-20% 長くなる傾向
+    notes:
+      - UI ラベルは不定詞形を使用 (e.g., "Exporter", "Enregistrer")
+      - アクセント記号を正確に使用（é, è, ê, ë, à, ç 等）
+      - 数値の区切りはスペース (1 000) 、小数点はコンマ (3,14)
+
+  de:
+    name: Deutsch
+    plural_categories: [one, other]
+    formality: Sie（敬称）を基本とする
+    text_length: 日本語・英語より 20-30% 長くなる傾向（複合語が長い）
+    notes:
+      - 名詞の頭文字は常に大文字
+      - 複合語が非常に長くなるため、UI の文字数制限に注意
+      - ウムラウト (ä, ö, ü) と ß を正確に使用
+
+  es:
+    name: Español
+    plural_categories: [one, other]
+    # one: 1のとき
+    # other: それ以外
+    formality: usted（敬称）を基本とする
+    text_length: 英語より 15-25% 長くなる傾向
+    notes:
+      - スペインスペイン語とラテンアメリカスペイン語の差異に注意
+      - es (スペイン), es-419 (ラテンアメリカ) で使い分ける場合がある
+      - 逆疑問符 (¿) と逆感嘆符 (¡) を忘れない
+
+  it:
+    name: Italiano
+    plural_categories: [one, other]
+    formality: Lei（敬称）を基本とする
+    text_length: 英語より 10-15% 長くなる傾向
+    notes:
+      - アクセント記号を正確に使用（à, è, é, ì, ò, ù）
+      - 冠詞の省略は不自然になるため注意
+
+  pt-BR:
+    name: Português (Brasil)
+    plural_categories: [one, many, other]
+    formality: você を基本とする
+    text_length: 英語より 10-20% 長くなる傾向
+    notes:
+      - ポルトガル本国 (pt-PT) とは用語・綴りが異なる
+      - アクセント記号を正確に使用（ã, õ, ç, é 等）
+
+  th:
+    name: ภาษาไทย
+    plural_categories: [other]
+    formality: สุภาพ（丁寧語）を基本とする
+    text_length: 日本語と同程度
+    notes:
+      - タイ語にはスペースによる単語区切りがない（改行位置に注意）
+      - ครับ/ค่ะ（丁寧語尾）はアプリ UI では通常省略
+      - 数字はアラビア数字 (0-9) を使用（タイ数字は使わない）
+
+  vi:
+    name: Tiếng Việt
+    plural_categories: [other]
+    formality: neutral（丁寧な表現を使用）
+    text_length: 英語と同程度
+    notes:
+      - ベトナム語は声調記号が多い（正確に入力すること）
+      - 漢越語由来の用語が日本語と似ている場合がある
+
+  id:
+    name: Bahasa Indonesia
+    plural_categories: [other]
+    formality: neutral
+    text_length: 英語と同程度
+    notes:
+      - 複数形は語の重複で表現する場合がある (e.g., "buku-buku")
+      - ただし UI 文脈では重複なしが一般的
+
+  ar:
+    name: العربية
+    plural_categories: [zero, one, two, few, many, other]
+    # zero: 0, one: 1, two: 2, few: 3-10, many: 11-99, other: 100+
+    # 6カテゴリすべてが必要
+    formality: فصحى（正則アラビア語）を基本とする
+    text_length: 英語と同程度かやや短い
+    notes:
+      - RTL（右から左）レイアウト
+      - 数字はアラビア数字のまま左から右に表記
+      - プレースホルダー前後のテキスト方向が反転しないよう注意
+      - 6つの複数形カテゴリすべてを正確に翻訳すること
+
+  hi:
+    name: हिन्दी
+    plural_categories: [one, other]
+    # one: 0 または 1
+    formality: आप（敬称）を基本とする
+    text_length: 英語より 10-20% 長くなる傾向
+    notes:
+      - デーヴァナーガリー文字を使用
+      - 技術用語は英語のまま使われることが多い
+
+# --------------------------------------------------
+# 未掲載言語への対応
+# --------------------------------------------------
+# このファイルに掲載されていない言語が対象の場合：
+#
+# 1. CLDR の複数形ルールを確認する
+#    https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+#
+# 2. 最低限、以下を確認する：
+#    - 必要な plural_categories
+#    - テキストの方向（LTR / RTL）
+#    - デフォルトのフォーマリティレベル
+#
+# 3. このファイルに追記して、チームで共有することを推奨する

@@ -1,0 +1,140 @@
+# iOS ローカライズ用語集
+# 翻訳時にこのファイルを参照し、用語の一貫性を保つ。
+#
+# do_not_translate: 全言語で翻訳せずそのまま使用する用語
+# terminology: 言語別に統一すべき訳語（対応言語は自由に追加可能）
+# context_notes: 翻訳者向けの補足情報
+#
+# 新しい言語を追加する場合:
+#   terminology の各エントリに言語コードのキーを追加するだけでよい。
+#   未定義の言語は Claude が文脈に基づいて翻訳する。
+
+do_not_translate:
+  # アプリ名・ブランド名
+  - HealthTakeout
+  - NSEasyConnect
+  - FourCropper
+  # プラットフォーム固有名詞
+  - HealthKit
+  - Apple Watch
+  - iPhone
+  - iPad
+  - iCloud
+  - Apple
+  - App Store
+  - TestFlight
+  - Nintendo Switch
+  - Android
+  # ファイル形式・技術用語
+  - CSV
+  - JSON
+  - PDF
+  - Bluetooth
+  - Wi-Fi
+
+terminology:
+  # 各エントリに必要な言語コードを自由に追加できる。
+  # 例えば fr, it を追加する場合はキーを足すだけ。
+  # 未定義の言語が翻訳対象になった場合、Claude は
+  # 既存の訳語パターンと文脈から適切に翻訳する。
+
+  エクスポート:
+    en: Export
+    zh-Hans: 导出
+    zh-Hant: 匯出
+    ko: 내보내기
+    fr: Exporter
+    de: Exportieren
+    es: Exportar
+    it: Esportare
+    pt-BR: Exportar
+
+  インポート:
+    en: Import
+    zh-Hans: 导入
+    zh-Hant: 匯入
+    ko: 가져오기
+    fr: Importer
+    de: Importieren
+    es: Importar
+    it: Importare
+    pt-BR: Importar
+
+  設定:
+    en: Settings
+    zh-Hans: 设置
+    zh-Hant: 設定
+    ko: 설정
+    fr: Réglages
+    de: Einstellungen
+    es: Ajustes
+    it: Impostazioni
+    pt-BR: Configurações
+
+  データ:
+    en: Data
+    zh-Hans: 数据
+    zh-Hant: 資料
+    ko: 데이터
+    fr: Données
+    de: Daten
+    es: Datos
+    it: Dati
+    pt-BR: Dados
+
+  歩数:
+    en: Steps
+    zh-Hans: 步数
+    zh-Hant: 步數
+    ko: 걸음 수
+    fr: Pas
+    de: Schritte
+    es: Pasos
+    it: Passi
+    pt-BR: Passos
+
+  心拍数:
+    en: Heart Rate
+    zh-Hans: 心率
+    zh-Hant: 心率
+    ko: 심박수
+    fr: Fréquence cardiaque
+    de: Herzfrequenz
+    es: Frecuencia cardíaca
+    it: Frequenza cardiaca
+    pt-BR: Frequência cardíaca
+
+  血圧:
+    en: Blood Pressure
+    zh-Hans: 血压
+    zh-Hant: 血壓
+    ko: 혈압
+    fr: Tension artérielle
+    de: Blutdruck
+    es: Presión arterial
+    it: Pressione sanguigna
+    pt-BR: Pressão arterial
+
+  # プロジェクト固有の用語を追加する場合のテンプレート:
+  #
+  # 用語の日本語:
+  #   en: English term
+  #   zh-Hans: 中文术语
+  #   fr: Terme français
+  #   # ... 必要な言語を追加
+
+context_notes:
+  - context: ボタンラベル
+    note: >
+      簡潔な動詞形を使用。
+      英語は動詞の原形、フランス語は不定詞、
+      韓国語は합쇼체、ドイツ語は不定詞。
+      各言語の慣例は language-guide.yaml を参照。
+  - context: エラーメッセージ
+    note: ユーザーフレンドリーな表現。技術用語は避ける。
+  - context: 権限リクエスト
+    note: Apple のガイドラインに沿った丁寧な表現を使用。
+  - context: ヘルスケア用語
+    note: >
+      医療用語は各言語の一般的な表現を優先する。
+      専門用語よりも一般ユーザーが理解しやすい表現を選ぶ。
