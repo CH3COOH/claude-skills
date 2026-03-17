@@ -89,7 +89,7 @@ xcodebuild -exportLocalizations \
 ```
 
 ### 注意事項
-- `-project` は必須（ワークスペースは非対応）
+- プロジェクトの場合は `-project`、ワークスペースの場合は `-workspace` と `-scheme` を指定する
 - `-exportLanguage` を省略すると開発言語のみエクスポートされる
 - コマンドは全ターゲットをビルドするため、コンパイルエラーがあると失敗する
 - 出力先に `Localizations/{lang}.xcloc/` が言語ごとに生成される
