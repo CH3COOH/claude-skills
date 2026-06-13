@@ -2,6 +2,7 @@
 name: git-rebase
 description: 指定範囲のコミットを1つに統合（squash）するためのinteractive rebase手順とコミットメッセージを生成する。「コミットをまとめたい」「squashしたい」「rebaseでコミット整理」「履歴をきれいにしたい」「コミット統合」などの依頼時に使用。
 allowed-tools: Bash
+model: haiku
 argument-hint: "<from-commit(古い方)> <to-commit(新しい方)>"
 metadata:
   author: Kenji Wada
